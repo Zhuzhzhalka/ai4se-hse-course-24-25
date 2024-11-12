@@ -1,0 +1,33 @@
+[tool.black]
+    line-length = 80
+    target-version = ['py310']
+    skip-string-normalization = true
+
+[tool.flakeheaven]
+    max-line-length = 80
+    count = true
+    format = "grouped"
+    # Mark package as local
+    application_import_names = ["funccraft"]
+    import_order_style = "smarkets"
+    exclude = [
+        ".git",
+        "__pycache__",
+        ".venv",
+        "venv",
+        ".mypy_cache",
+        ".pytest_cache",
+    ]
+
+[tool.flakeheaven.plugins]
+    pycodestyle = ["+*", "-W503", "-E203", "-E741"]
+    pyflakes = ["+*"]
+    flake8-builtins = ["+*"]
+    flake8-comprehensions = ["+*"]
+    flake8-docstrings = ["+*", "-D10*", "-D400"]
+    flake8-import-order = ["+*"]
+    flake8-pep585 = ["+*"]
+    flake8-quotes = ["+*"]
+
+[tool.flakeheaven.exceptions."**/__init__.py"]
+    pyflakes = ["-F401"]
