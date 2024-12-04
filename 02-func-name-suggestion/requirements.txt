@@ -5,3 +5,4 @@ evaluate==0.4.2
 rouge_score==0.1.2
 torch==2.5.1
 transformers==4.46.2
+openpyxl
